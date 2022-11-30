@@ -1,0 +1,54 @@
+<div style="width: 50%; margin: auto">
+  <form
+    [formGroup]="weatherSearchForm"
+    (ngSubmit)="getWeatherData(weatherSearchForm.value)"
+    style="width: 60%; margin: auto"
+  >
+    <div style="margin: auto;">
+      <input
+        type="text"
+        id="weatherLocation"
+        aria-describedby="weatherLocation"
+        placeholder="Bitte geben Sie ein Ort ein"
+        formControlName="location"
+        style="margin: 0.5rem;"
+      />
+      <button type="submit" style="margin: 0.5rem;">
+        Wetterdaten suchen!
+      </button>
+    </div>
+    <div>
+    </div>
+  </form>
+</div>
+
+<div *ngIf="wetterDetails">
+  <h1>Wetter für  {{this.wetterDetails.name}}, {{this.wetterDetails.sys.country}}</h1>
+  <h3>{{this.wetterDetails.weather[0].description}}</h3>
+  <img src="http://openweathermap.org/img/wn/{{this.wetterDetails.weather[0].icon}}@2x.png" alt="icon">
+  <p>Temperatur: {{this.wetterDetails.main.temp}}°</p>
+  <p>Gefühlt: {{this.wetterDetails.main.feels_like}}°</p>
+  <p>Minimale Temp.: {{this.wetterDetails.main.temp_min}}°</p>
+  <p>Maximale Temp.: {{this.wetterDetails.main.temp_max}}°</p>
+  <p>Feuchtigkeit: {{this.wetterDetails.main.humidity}}%</p>
+  <p>Luftdruck: {{this.wetterDetails.main.pressure}} hPa</p>
+
+  <br>
+  <br>
+  <br>
+  <div *ngFor="let day of forecastDetails">
+    <h3>{{day.dt_txt}}</h3>
+    <h3>{{day.weather[0].description}}</h3>
+    <img src="http://openweathermap.org/img/wn/{{day.weather[0].icon}}@2x.png" alt="icon">
+    <p>Temperatur: {{day.main.temp}}°</p>
+    <p>Gefühlt: {{day.main.feels_like}}°</p>
+    <p>Minimale Temp.: {{day.main.temp_min}}°</p>
+    <p>Maximale Temp.: {{day.main.temp_max}}°</p>
+    <p>Feuchtigkeit: {{day.main.humidity}}%</p>
+    <p>Luftdruck: {{day.main.pressure}} hPa</p>
+    <br>
+    <br>
+    <br>
+  </div>
+</div>
+
