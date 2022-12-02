@@ -1,0 +1,22 @@
+<div class="button-container">
+  <button class="button" (click)="showPopup()">PopUp Fenster anzeigen</button>
+</div>
+<div #popup class="overlay">
+  <div class="popup">
+    <canvas (mousedown)="onMouseDown($event)" (mousemove)="onMouseMove($event)"
+            (touchmove)="onMouseMove($event)"
+            (touchstart)="onMouseDown($event)" #signPad width="350" height="200">
+    </canvas>
+    <br>
+    <span class="first-span">Im Feld die linke Maustaste gedrückt halten</span>
+    <span class="second-span">und die Maus bewegen, um zu zeichnen.</span>
+    <button (click)="clearSignature()" class="button-popup">Löschen</button>
+    <button (click)="saveSignature()" class="button-popup">Speichern</button>
+    <button (click)="hidePopup()" class="button-popup">Fenster schließen</button>
+  </div>
+</div>
+<div *ngIf="signatureImg">
+  <span>Unterschrift:</span>
+  <br>
+  <img [src]="signatureImg" alt="Signature">
+</div>

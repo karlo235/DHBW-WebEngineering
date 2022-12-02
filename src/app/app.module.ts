@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { WetterComponent } from './components/wetter/wetter.component';
 import { WetterService } from "./services/wetter/wetter.service";
 import { HttpClientModule } from "@angular/common/http";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { UnterschriftComponent } from './components/unterschrift/unterschrift.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WetterComponent
+    WetterComponent,
+    UnterschriftComponent
   ],
   imports: [
     BrowserModule,
