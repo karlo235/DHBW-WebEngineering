@@ -15,7 +15,7 @@
     <button (click)="hidePopup()" class="button-popup">Fenster schließen</button>
   </div>
 </div>
-<div *ngIf="signatureImg">
+<div *ngIf="signatureImg" class="result">
   <span>Unterschrift:</span>
   <br>
   <img [src]="signatureImg" alt="Signature">
