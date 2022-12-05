@@ -1,4 +1,6 @@
-# WebEngineeringMatrnr9053643
+# DHBW Web Engineering Project
+
+This is a simple project for the lecture Web Engineering at the DHBW.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.1.
 
